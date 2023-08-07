@@ -5,6 +5,8 @@ import Dropdown from '../Custom/Dropdown';
 import { Formik, Form } from 'formik'
 import * as Yup from "yup";
 import InputBox from '../Custom/Inputbox';
+import SaveButton from '../Custom/SaveButton';
+import NewTabs from './NewTabs';
 
 
 export default function HeaderTab() {
@@ -31,6 +33,7 @@ export default function HeaderTab() {
 
     return (
         <div className='mt-2 pl-2'>
+            <NewTabs index={0} value={0} />
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -46,11 +49,15 @@ export default function HeaderTab() {
                     touched,
                     setFieldValue
                 }) => (
-                    <Form className='grid sm:grid-cols-10 gap-2 pr-2'>
-                        <Dropdown name={'method'} label={''} options={methods} />
-                        <div className='sm:col-span-9'>
+                    <Form className='flex gap-2 justify-center items-center pr-4'>
+                        <div className='w-32'>
+                            <Dropdown name={'method'} label={''} options={methods} />
+                        </div>
+                        <div className='flex-1'>
                             <InputBox name='endpoint' placeholder='Enter a url' />
                         </div>
+                        <SaveButton props={{
+                        }} />
                     </Form>
                 )}
             </Formik>

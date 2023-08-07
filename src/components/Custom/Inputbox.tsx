@@ -60,7 +60,7 @@ export default function InputBox(props: InputBoxData) {
                 onInput={(e: any) => {
                     return ((props.type === 'number' || props?.disabled) ? e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, props?.numLength ? props?.numLength : 10) : e.target.value)
                 }}
-                className={`w-full ${props?.value ? 'bg-[#f1efef] cursor-not-allowed' : 'bg-[#231f1f]'} rounded h-9 border border-[#2d2929] text-[#888d8d] text-sm outline-none px-2 leading-8 ${props.error && 'border-[#FF0000]'} ${props?.className}`}
+                className={`w-full ${props?.value ? 'bg-[#f1efef] cursor-not-allowed' : 'bg-[#231f1f]'} rounded h-9 border input border-[#2d2929] text-[#888d8d] text-sm outline-none px-2 leading-8 ${props.error && 'border-[#FF0000]'} ${props?.className}`}
             /> : <Field
                 type={props?.type}
                 id={props?.id}
@@ -74,7 +74,7 @@ export default function InputBox(props: InputBoxData) {
                 onInput={(e: any) => {
                     return ((props.type === 'number' && !props.allowDecimals) ? e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, props?.numLength ? props?.numLength : 10) : props?.restrictNumber ? lettersOnly(e) : (props?.type === "text" && props?.capsOnly) ? capsOnly(e) : e.target.value)
                 }}
-                className={`w-full ${(props?.value || props?.disabled) ? 'bg-[#f1efef] cursor-not-allowed' : 'bg-[#231f1f]'} rounded h-9 border border-[#2d2929] text-[#888d8d] text-sm outline-none px-2 leading-8 ${props.error && 'border-[#FF0000]'} ${props?.className}`}
+                className={`w-full ${(props?.value || props?.disabled) ? 'bg-[#f1efef] cursor-not-allowed' : 'bg-[#231f1f]'} rounded h-9 border input border-[#2d2929] text-[#888d8d] text-sm outline-none px-2 leading-8 ${props.error && 'border-[#FF0000]'} ${props?.className}`}
             />
             }
             <div className="text-[#FF0000] text-xs">

@@ -35,22 +35,6 @@ export default function Dropdown(props: Props) {
         setValue(data[0]?.value);
     }, [values[props?.name]])
 
-    window.addEventListener('mousedown', (e: MouseEvent) => {
-        console.log(e.clientY)
-        console.log(window.innerHeight)
-        // @ts-ignore
-        // document.getElementById('dropdownbar')?.style.position = 'absolute';
-        if (window.innerHeight - e.clientY > 100) {
-            // @ts-ignore
-            const dropdownbar = document.getElementById('dropdownbar')
-            if(dropdownbar) {
-                dropdownbar.style.top = 0 + 'px'
-            } else {
-                console.log(e.clientY)
-            }
-        }
-    })
-
     return (
         <div ref={ref} className="relative" >
             <label id="listbox-label" className={`block text-xs leading-6  ${props.error ? 'text-[#FF0000]' : 'text-gray-900'}`}>{props.label}{props.asterisk && <i className="fa fa-solid fa-asterisk " style={{ color: 'red', fontSize: 6, position: 'absolute', top: 6, paddingLeft: 1 }} ></i>}</label>
@@ -79,7 +63,7 @@ export default function Dropdown(props: Props) {
                                 <div className="flex items-center">
                                     <span className={`font-normal ml-3 block truncate ${data.color ? `${data.color}` : 'text-[#92918d]'}`}>{data.name}</span>
                                 </div>
-                                {name === data.name && value !== '' && <span className="text-indigo-600 absolute inset-y-0 right-0 flex items-center pr-4">
+                                {name === data.name && value !== '' && <span className="text-[#92918d] absolute inset-y-0 right-0 flex items-center pr-4">
                                     <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
                                     </svg>
