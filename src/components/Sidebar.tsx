@@ -13,7 +13,7 @@ export default function Sidebar(props:Props) {
             <div className='flex flex-col gap-4 justify-center items-center pt-2'>
                 <i className="fa-solid fa-hippo text-3xl text-[#fda64e]"></i>
                 <div onClick={() => props.setOpen(!props.open)} className='cursor-pointer'>
-                    {props.open ? <i className="fa-solid text-[#ececec] fa-sun text-xl"></i> : <i className="fa-regular fa-sun text-[#92918d] text-xl"></i>}
+                    {props.open ? <i className="fa-solid text-[#92918d] fa-sun text-xl"></i> : <i className="fa-regular fa-sun text-[#92918d] text-xl"></i>}
                 </div>
             </div>
             <div className='flex flex-col gap-[0.8rem] justify-center items-center pb-6'>
