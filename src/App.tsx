@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 // @ts-ignore
-import ResizePanel from "react-resize-panel";
 import HeaderTab from './components/HeaderTab/HeaderTab';
 // @ts-ignore
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
@@ -10,7 +9,8 @@ import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
 function Block({ style }) {
   return (
     <div
-      style={{ height: '100vh', width: "100%", background: "#231f1f", ...style }}
+      style={{ height: '100vh', background: "#231f1f", ...style }}
+      className='active:bg-[#fda64e]'
     />
   );
 }
@@ -25,7 +25,7 @@ function App() {
     <div className='flex w-full bg-[#1c1818] overflow-hidden font-[Poppins]'>
       <Sidebar open={open} setOpen={setOpen} />
       <div className='flex w-full h-full justify-between'>
-        <div className='flex h-screen w-screen overflow-hidden text-white'>
+        <div className='flex h-screen w-full text-[#92918d]'>
           {open && <PanelGroup direction="horizontal" style={{ width: 300 }}>
             <Panel minSize={minSize} defaultSize={20} >
               <div className='bg-[#231f1f] w-[250px] p-3 h-screen'>
@@ -36,32 +36,35 @@ function App() {
               </div>
             </Panel>
           </PanelGroup>}
-          <PanelGroup direction="horizontal">
-            <Panel minSize={minSize}>
+          <div className='flex flex-col w-full'>
+           <HeaderTab />
+          <PanelGroup direction="horizontal" className="pt-2 pl-2 pr-2">
+            <Panel minSize={minSize} className="rounded-tl-xl">
               <div className='bg-[#231f1f] w-full h-screen flex justify-between p-2 border-r border-r-[#2d2929]'>
                 panel1
                 <i className="fa-solid fa-code" onClick={() => setShow(!show)}></i>
               </div>
             </Panel>
-            <PanelResizeHandle>
+            <PanelResizeHandle className="active:bg-[#fda64e]">
               <Block style={{ width: 1, marginLeft: 1 }} />
             </PanelResizeHandle>
-            {/* {show && */}
+            {show &&
               <Panel>
                 <div className='bg-[#231f1f] w-full h-screen flex justify-between p-2 border-r border-r-[#2d2929]'>
                   panel2
                 </div>
               </Panel>
-            {/* } */}
-            <PanelResizeHandle>
+            }
+            <PanelResizeHandle className="active:bg-[#fda64e]">
               <Block style={{ width: 1, marginLeft: 1 }} />
             </PanelResizeHandle>
-            <Panel>
-              <div className='bg-[#231f1f] w-full h-screen flex justify-between p-2 border-r border-r-[#2d2929]'>
+            <Panel className="rounded-tr-xl">
+              <div className='bg-[#231f1f] w-full h-screen flex justify-between p-2'>
                 panel3
               </div>
             </Panel>
           </PanelGroup>
+          </div>
         </div>
       </div>
     </div>
