@@ -1,3 +1,4 @@
+import { Button, Popover, Typography } from '@mui/material';
 import React from 'react'
 
 type Props = {
@@ -5,9 +6,9 @@ type Props = {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Sidebar(props:Props) {
-    // const [open, setOpen] = useState(false);
-    // console.log(open);
+export default function Sidebar(props: Props) {
+
+
     return (
         <div className='flex flex-col w-[3.5rem] justify-between border-r border-r-[#2d2929] bg-[#231f1f] h-screen px-3'>
             <div className='flex flex-col gap-4 justify-center items-center pt-2'>
