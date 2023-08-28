@@ -1,0 +1,63 @@
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    background-color:#222222;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-gradient{
+    position:relative;
+    display:inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: white;
+    z-index: 1;
+}
+  
+.top-left {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    color: white;
+    z-index: 1;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+
+/* 
+#002f4b,#dc4225 
+Convert HEX to RGBA - http://hex2rgba.devoth.com/
+*/
+.img-gradient:after {
+    content:'';
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:100%;
+    display:inline-block;
+    background: linear-gradient(to top right, rgb(13, 17, 26) 25%, rgba(43, 120, 132, 0.532) 100%); 
+}
+.img-gradient img{
+display:block;
+}

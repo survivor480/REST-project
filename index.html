@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./public/css/app.css">
+        <link rel="stylesheet" href="./public/css/modal.css">
+        <script src="./public/js/app.js" defer></script>
+        <script src="./public/js/select_options.js" defer></script>
+        <script src="./public/js/adjustable_bars.js" defer></script>
+        <title>REST for Web</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="sidebar">
+                <div id="sidebar-item-1">
+                    <ul id="top-list">
+                        <li>
+                            <div id="icon-list">
+                                <img id="rest-icon" width="50" height="50" src="./public/images/rest-icon.png" alt="rest-icon">
+                            </div>
+                        </li>
+                        <li>
+                            <button id="collections-button" class="sidebar-buttons">
+                                <ul id="button-unordered-list">
+                                    <li><img id="sidebar-item-collections" width="25" height="25" src="./public/images/collections-dark.png" alt="collections-icon"></li>
+                                    <li><p id="collections-text" class="sidebar-text">Collections</p></li>
+                                </ul>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="environment-button" class="sidebar-buttons">
+                                <ul id="button-unordered-list">
+                                    <li><img id="sidebar-item-environments" width="25" height="25" src="./public/images/environment-dark.png" alt="environment-icon"></li>
+                                    <li><p id="environment-text" class="sidebar-text">Environment</p></li>
+                                </ul>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="history-button" class="sidebar-buttons">
+                                <ul id="button-unordered-list">
+                                    <li><img id="sidebar-item-history" width="25" height="25" src="./public/images/history-dark.png" alt="history-icon"></li>
+                                    <li><p id="history-text" class="sidebar-text">History</p></li>
+                                </ul>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="darkmode-button" class="sidebar-buttons">
+                                <ul id="button-unordered-list">
+                                    <li><img id="sidebar-item-darkmode" width="25" height="25" src="./public/images/dark-mode-dark.png" alt="darkmode-icon"></li>
+                                    <li><p id="darkmode-text" class="sidebar-text">Light Mode</p></li>
+                                </ul>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sidebar-item-2">
+                    <ul id="bottom-list">
+                        <li>
+                            <button id="support-button" class="sidebar-buttons">
+                                <ul id="button-unordered-list">
+                                    <li><img id="sidebar-item-support" width="25" height="25" src="./public/images/support-dark.png" alt="support-icon"></li>
+                                    <li><p id="support-text" class="sidebar-text">Support</p></li>
+                                </ul>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="user-button" class="sidebar-buttons">
+                                <ul id="button-unordered-list">
+                                    <li><img id="sidebar-item-user_login" width="25" height="25" src="./public/images/user-dark.png" alt="user-icon"></li>
+                                    <li><p id="user_button-text" class="sidebar-text">User</p></li>
+                                </ul>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="remaining-page">
+                <div id="container">
+                    <div id="collections-bar" style="color: white;">
+                        Collections Bar
+                    </div>
+                    <div id="resizer"></div>
+                    <div id="main" style="color: white;">
+                        <div id="tabs-container">
+                            <div class="individual-tab">
+                                <p>Main Tab</p>
+                                <button class="close-button">
+                                    <img src="./public/images/close-dark.png" alt="close-button" width="15" height="15" id="close-button-img">
+                                </button>                                
+                            </div>
+
+                            <div class="individual-tab">
+                                <p>Main Tab</p>
+                                <button class="close-button">
+                                    <img src="./public/images/close-dark.png" alt="close-button" width="15" height="15" id="close-button-img">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="requests-bar">
+                            <div id="requests-bar-first">
+                                <select title="requests-tab" id="requests-options">
+                                    <option value="get" id="get-option">GET</option>
+                                    <option value="post" id="post-option">POST</option>
+                                    <option value="patch" id="patch-option">PATCH</option>
+                                    <option value="put" id="put-option">PUT</option>
+                                    <option value="delete" id="delete-option">DELETE</option>
+                                    <option value="head" id="head-option">HEAD</option>
+                                    <option value="trace" id="trace-option">TRACE</option>
+                                </select>
+                                <input type="text" id="link-input-text" placeholder="Enter your request here"/>
+                                <button id="submit-button">Submit</button>
+                              </div>
+                        </div>
+
+                        <div id="results-bar">
+                            <div id="results-container" style="padding: 0px; background-color: black; display: flex; align-items: start;">
+                                <div id="request-categories" style="height: 30px; display: flex; align-items: end;">
+                                    <div class="request-categories-individual" style="overflow: hidden; padding: 0px 0px 0px 10px; border-radius: 10px 10px 0px 0px;">
+                                        Params
+                                    </div>
+                                    <div class="request-categories-individual" style="overflow: hidden; padding: 0px 0px 0px 10px; border-radius: 10px 10px 0px 0px;">
+                                        Headers
+                                    </div>
+                                    <div class="request-categories-individual" style="overflow: hidden; padding: 0px 0px 0px 10px; border-radius: 10px 10px 0px 0px;">
+                                        Auth
+                                    </div>
+                                    <div class="request-categories-individual" style="padding: 0px 0px 0px 10px; border-radius: 10px 10px 0px 0px;">
+                                        Body
+                                    </div>
+                                </div>
+                                <div id="code-section-toggle">
+                                    <button type="button" style="background: black; color: white; margin: 10px">Code</button>
+                                </div> 
+                            </div>
+                            <div id="results-first-second-resizer"></div>
+                            <div id="code-section">
+                                The second one
+                            </div>
+                            <div id="results-second-third-resizer"></div>
+                            <div id="response-container">
+                                The third one
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="user-login-modal" class="modal">
+                <div id="this-is-login-modal" style="width: 50%;">
+                    <form class="modal-content animate" action="/action_page.php" method="post">
+                        <div class="imgcontainer" style="display: flex; align-items: center; justify-content: center;">
+                          <div class="" style="height: 300px; border-radius: 50%; border: 1px solid black; width: 300px; display: flex; align-items: center; justify-content: center;">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="12rem" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                          </div>
+                        </div>
+                    
+                        <div class="container-modal">
+                          <label for="uname"><b>Username</b></label>
+                          <input type="text" placeholder="Enter Username" name="uname" required id="username-input">
+                    
+                          <label for="psw"><b>Password</b></label>
+                          <input type="password" placeholder="Enter Password" name="psw" required id="user-password-input">
+                            
+                          <button type="submit" class="modal-button">Login</button>
+                          <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                          </label>
+                        </div>
+                    
+                        <div class="container-modal" style="background-color:#f1f1f1">
+                          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn modal-button">Cancel</button>
+                          <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
