@@ -1,5 +1,7 @@
 import { Button, Popover, Typography } from '@mui/material';
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import axios from 'axios';
+import FileSystemNavigator from './Custom/TreeView';
 
 type Props = {
     open: boolean;
@@ -7,6 +9,35 @@ type Props = {
 }
 
 export default function Sidebar(props: Props) {
+    const [apiResponse, setApiResponse] = useState({});
+
+    const api_call = async () => {
+        try{
+            const response = await axios({
+                method: 'post',
+                headers: {"Access-allow-control-origin": "*"},
+                url: 'http://monster-dev-test.distronix.in:3300/login',
+                data: {
+                    "username": "survivor_48",
+                    "password": "#Kanoon314#"
+                }});
+
+            setApiResponse(response);
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+
+        return api_call;
+    }
+
+    useEffect(() => {
+        api_call()
+    }, []);
+
+    console.log("This is the API response", apiResponse);
+
+    // api_call();
 
 
     return (

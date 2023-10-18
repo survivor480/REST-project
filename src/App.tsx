@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 // @ts-ignore
-import HeaderTab from './components/HeaderTab/HeaderTab';
+// import HeaderTab from './components/HeaderTab/HeaderTab';
 // @ts-ignore
 import { PanelGroup, Panel } from "react-resizable-panels";
 import Request from './Workspace/Request/RequestPanel';
 import Response from './Workspace/Response/ResponsePanel';
-import { ThreeDots } from 'react-loader-spinner';
+// import { ThreeDots } from 'react-loader-spinner';
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
-import JsonEditorPane from './Panes/Json/JsonEditorPane';
-import ResponseHeaderPane from './Panes/ResponseHeader/ResponseHeaderPane';
+// import JsonEditorPane from './Panes/Json/JsonEditorPane';
+// import ResponseHeaderPane from './Panes/ResponseHeader/ResponseHeaderPane';
 import { methods } from './Data/methods';
+import FileSystemNavigator from './components/Custom/TreeView';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className='flex w-full bg-[#1c1818] overflow-hidden font-[Poppins] cursor-default'>
       <Sidebar open={open} setOpen={setOpen} />
+      {/* <div>Test Div</div> */}
       <div className='flex w-full h-full justify-between'>
         <div className='flex h-screen w-full text-[#92918d]'>
           {open && <PanelGroup direction="horizontal" style={{ width: 350 }}>
@@ -33,6 +35,7 @@ function App() {
                   <span><i className="fa-solid fa-shield-halved p-1 rounded-md bg-[#3c3938] mr-2"></i>Incognito Space</span>
                   <i className="fa-solid fa-plus p-[0.4rem] text-[16px] hover:bg-[#3c3938] rounded-md"></i>
                 </div>
+              <FileSystemNavigator />
               </div>
             </Panel>
             {/* <PanelResizeHandle className="w-[0.1rem] active:bg-[#fda64e] transition duration-300 bg-[#2d2929]" /> */}

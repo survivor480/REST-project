@@ -20,7 +20,7 @@ export default function Request({ setResponse, setLoading, loading }: {
   loading: any;
 }) {
   const [url, setUrl] = useState(
-    'https://jsonplaceholder.typicode.com/todos/1'
+    'https://jsonplaceholder.typicode.com/todos/'
   );
   const [reqMethod, setReqMethod] = useState('GET');
   const [queryParams, setQueryParams] = useState(keyPairInitState);

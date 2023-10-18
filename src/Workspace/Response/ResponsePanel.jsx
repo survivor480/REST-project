@@ -51,7 +51,7 @@ export default function Response({ response, loading }) {
   };
 
   return (
-    <div className='my-4 ml-5'>
+    <div className='my-4 ml-5 h-60'>
       <span className='text-sm font-medium'>Response</span>
       {response ? ( <RenderedResponseMeta /> ) : null}
       <ResponseTabGroup
