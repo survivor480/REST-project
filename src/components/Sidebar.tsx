@@ -1,4 +1,5 @@
 import { Button, Popover, Typography } from '@mui/material';
+import { TreeView } from '@mui/x-tree-view';
 import React from 'react'
 
 type Props = {
@@ -22,6 +23,7 @@ export default function Sidebar(props: Props) {
                 <div className='h-1 border-b w-full border-b-[#2d2929]'></div>
                 <i className="fa-solid fa-gear text-[#92918d] text-xl"></i>
             </div>
+            <TreeView />
         </div>
     )
 }

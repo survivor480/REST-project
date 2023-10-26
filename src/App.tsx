@@ -1,21 +1,17 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 // @ts-ignore
-import HeaderTab from './components/HeaderTab/HeaderTab';
-// @ts-ignore
 import { PanelGroup, Panel } from "react-resizable-panels";
 import Request from './Workspace/Request/RequestPanel';
 import Response from './Workspace/Response/ResponsePanel';
-import { ThreeDots } from 'react-loader-spinner';
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
-import JsonEditorPane from './Panes/Json/JsonEditorPane';
-import ResponseHeaderPane from './Panes/ResponseHeader/ResponseHeaderPane';
 import { methods } from './Data/methods';
+import IncognitoSpace from './components/Custom/IncognitoSpace';
+import ControlledTreeView from './components/Custom/TreeView/TreeView';
 
 
 function App() {
   const [open, setOpen] = useState(true);
-  const [show, setShow] = useState(false);
   const [minSize, setMinSize] = useState(20);
 
   const [response, setResponse] = useState(null);
@@ -29,10 +25,8 @@ function App() {
           {open && <PanelGroup direction="horizontal" style={{ width: 350 }}>
             <Panel minSize={minSize} defaultSize={20} >
               <div className='bg-[#231f1f] w-[300px] p-3 h-screen'>
-                <div className='flex justify-between text-[#bbb9b6] items-center text-xs'>
-                  <span><i className="fa-solid fa-shield-halved p-1 rounded-md bg-[#3c3938] mr-2"></i>Incognito Space</span>
-                  <i className="fa-solid fa-plus p-[0.4rem] text-[16px] hover:bg-[#3c3938] rounded-md"></i>
-                </div>
+                <IncognitoSpace />
+                <ControlledTreeView />
               </div>
             </Panel>
             {/* <PanelResizeHandle className="w-[0.1rem] active:bg-[#fda64e] transition duration-300 bg-[#2d2929]" /> */}
