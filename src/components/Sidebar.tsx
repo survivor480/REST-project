@@ -1,7 +1,7 @@
 import { Button, Popover, Typography } from '@mui/material';
-import React, { useEffect, useState, useRef } from 'react'
-import axios from 'axios';
-import FileSystemNavigator from './Custom/TreeView';
+import { TreeView } from '@mui/x-tree-view';
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 
 type Props = {
     open: boolean;
@@ -53,6 +53,7 @@ export default function Sidebar(props: Props) {
                 <div className='h-1 border-b w-full border-b-[#2d2929]'></div>
                 <i className="fa-solid fa-gear text-[#92918d] text-xl"></i>
             </div>
+            <TreeView />
         </div>
     )
 }

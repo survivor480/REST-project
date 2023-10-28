@@ -11,12 +11,13 @@ import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
 // import JsonEditorPane from './Panes/Json/JsonEditorPane';
 // import ResponseHeaderPane from './Panes/ResponseHeader/ResponseHeaderPane';
 import { methods } from './Data/methods';
-import FileSystemNavigator from './components/Custom/TreeView';
+import SampleTreeView from './components/Custom/TreeView/TreeView';
+import ReactMenu from './components/Custom/ReactMenu/ReactMenu';
+import SpaceComponent from './components/Helpful Components/SpaceComponent';
 
 
 function App() {
   const [open, setOpen] = useState(true);
-  const [show, setShow] = useState(false);
   const [minSize, setMinSize] = useState(20);
 
   const [response, setResponse] = useState(null);
@@ -35,7 +36,8 @@ function App() {
                   <span><i className="fa-solid fa-shield-halved p-1 rounded-md bg-[#3c3938] mr-2"></i>Incognito Space</span>
                   <i className="fa-solid fa-plus p-[0.4rem] text-[16px] hover:bg-[#3c3938] rounded-md"></i>
                 </div>
-              <FileSystemNavigator />
+                <SpaceComponent height={"20"}/>
+                <SampleTreeView />
               </div>
             </Panel>
             {/* <PanelResizeHandle className="w-[0.1rem] active:bg-[#fda64e] transition duration-300 bg-[#2d2929]" /> */}
@@ -97,7 +99,7 @@ function App() {
                 {/* </>)} */}
               </div>
             </Tabs>
-            
+
           </div>
         </div>
       </div>
@@ -106,3 +108,41 @@ function App() {
 }
 
 export default App;
+
+
+// import React from "react";
+// import "./App.css";
+// import SplitPane from "react-split-pane";
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       {/* @ts-ignore */}
+//       <SplitPane
+//       split="horizontal" 
+//       defaultSize={150} 
+//       allowResize={false}>
+//         <div className="settingsDiv">
+//           <h1>SCCS Corona Dashboard</h1>
+//           <button id={"mainButton"}>
+//             Start Simulation
+//           </button>
+//         </div>
+//       {/* @ts-ignore */}
+
+//         <SplitPane
+//           split="vertical"
+//           minSize={100}
+//           maxSize={-100}
+//           defaultSize={"50%"}
+//         >
+//           <div className="simulationDiv" />
+//           <div className="statisticsDiv" />
+//         </SplitPane>
+//       </SplitPane>
+//     </div>
+//   )
+// }
+
+// export default App;
